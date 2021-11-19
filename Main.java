@@ -42,6 +42,9 @@ public class Main
       pne = prompt.indexOf(promptNameEnd);
       promptName = prompt.substring(pns, pne);
       
+      promptName = promptName.substring(0, 2).replace("p_", "") + promptName.substring(2, promptName.length());
+      promptName = promptName.substring(0, 2).replace("P_", "") + promptName.substring(2, promptName.length());
+      
       if (prompt.indexOf(promptValueEnd) - prompt.indexOf(promptValueStart) != promptValueStart.length()) {
         newPrompt += "\n" + promptName + ": " + "\n";
         while (prompt.indexOf(promptValueStart) != -1) {
